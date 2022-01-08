@@ -10,9 +10,9 @@ import com.conatus.course.entities.User;
 @RestController
 @RequestMapping(value = "/users")
 public class UserResource {
-	@GetMapping
-	public ResponseEntity<User> findAll(){
-		User u = new User(1L,"Jonas","jonas@vale3@hotmail.com","9999999","12345");
-		return ResponseEntity.ok().body(u);
-	}
+	//@GetMapping
+	//public ResponseEntity<User> findAll(){
+		//User u = new User(1L,"Jonas","jonas@vale3@hotmail.com","9999999","12345");
+		//return ResponseEntity.ok().body(u);
+	//}
 }
