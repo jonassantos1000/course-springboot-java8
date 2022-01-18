@@ -12,6 +12,7 @@ import com.conatus.course.repositories.UserRepository;
 @Service
 public class UserService {
 	
+	//Faz a injeção de dependencia da classe UserRepository
 	@Autowired
 	private UserRepository repository;
 	

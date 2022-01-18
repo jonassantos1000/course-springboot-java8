@@ -18,7 +18,7 @@ import com.conatus.course.service.UserService;
 @RequestMapping(value = "/users")
 public class UserResource {
 	
-	@Autowired
+	@Autowired //Faz a injeção de dependencia da classe UserService
 	private UserService service;
 	
 	@GetMapping
@@ -27,7 +27,7 @@ public class UserResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
-	@GetMapping(value="/{id}")
+	@GetMapping(value="/{id}") //Chama o método e retorna a requisição do método(Retorno que é consultado no postman)
 	public ResponseEntity<User> FindById(@PathVariable Long id) {
 		User obj = service.FindById(id);
 		return ResponseEntity.ok().body(obj);
