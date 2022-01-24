@@ -32,7 +32,7 @@ public class Order implements Serializable  {
 	private Instant moment;
 	
 	private Integer orderStatus;
-	
+		
 	@ManyToOne
 	@JoinColumn(name="client_id")
 	private User client;
@@ -43,6 +43,13 @@ public class Order implements Serializable  {
 	@OneToOne(mappedBy="order", cascade=CascadeType.ALL)	
 	private Payment payment;
 	
+	public Double getTotal() {
+		Double sum=0.0;
+		for(OrderItem x: items) {
+			sum=sum+x.getSubTotal();
+		}
+		return sum;
+	}
 	
 
 	public Order() {
